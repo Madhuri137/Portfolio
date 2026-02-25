@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhuri Prajapati - Cybersecurity Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            background: #0f172a;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #1e293b;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.95;
+        }
+
+        .hero .description {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 1rem auto 2rem;
+            opacity: 0.9;
+        }
+
+        .availability {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid #22c55e;
+            color: #86efac;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #1e3a8a;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #f1f5f9;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about-content {
+            background: #1e293b;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #334155;
+        }
+
+        .about-content h3 {
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+
+        .about-content p {
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .about-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: #1e293b;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid #334155;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        .skill-card h3 {
+            color: #3b82f6;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #93c5fd;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        /* Projects Section */
+        .project-card {
+            background: #1e293b;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid #334155;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            color: #f1f5f9;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tech {
+            color: #3b82f6;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-description {
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-features {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .project-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #cbd5e1;
+        }
+
+        .project-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        /* Certifications Section */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background: #1e293b;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid #334155;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        /* Make certificates clickable */
+        .cert-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .view-cert {
+            margin-top: 1rem;
+            color: #3b82f6;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .cert-link:hover .view-cert {
+            opacity: 1;
+        }
+
+        .cert-link:hover {
+            transform: translateY(-8px);
+        }
+
+        .cert-title {
+            font-size: 1.1rem;
+            color: #f1f5f9;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .cert-org {
+            color: #3b82f6;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .cert-date {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-description {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Target Roles Section */
+        .target-box {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .target-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .target-box p {
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .roles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+
+        .role {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: #1e293b;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid #334155;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #f1f5f9;
+        }
+
+        .contact-value {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .about-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Madhuri Prajapati</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#project">Project</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="availability">✓ Available for Internship</div>
+            <h1>Madhuri Prajapati</h1>
+            <p class="subtitle">Aspiring Cybersecurity Professional</p>
+            <p class="description">
+                B.Tech Information Technology student passionate about cybersecurity, threat detection, and network security. Looking for internship opportunities to apply my skills and learn from experienced professionals.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
+                <a href="#project" class="btn btn-secondary">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Enthusiastic learner with a passion for cybersecurity</p>
+            <div class="about-content">
+                <h3>Background</h3>
+                <p>
+                    I'm currently pursuing my B.Tech in Information Technology at University Institute of Technology RGPV, Bhopal (2023-2027). My interest in cybersecurity began when I learned about the increasing importance of digital security in today's world.
+                </p>
+                <p>
+                    I have completed multiple industry simulations from companies like Deloitte, Mastercard, and AIG, which gave me practical exposure to real-world security scenarios. I've also built a phishing email detection tool using Python, which helped me understand threat detection and security analysis.
+                </p>
+                <p>
+                    I'm eager to start my career through an internship where I can contribute my knowledge while learning from experienced professionals in the field.
+                </p>
+                
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">2027</div>
+                        <div class="stat-label">Expected Graduation</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Project Completed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <p class="section-subtitle">Technical and soft skills I'm developing</p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Programming</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">Regex</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Cybersecurity</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Phishing Detection</span>
+                        <span class="tag">Email Security</span>
+                        <span class="tag">Threat Analysis</span>
+                        <span class="tag">Log Inspection</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Wireshark (Basic)</span>
+                        <span class="tag">Nmap (Basic)</span>
+                        <span class="tag">Excel</span>
+                        <span class="tag">Tableau</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Analytical Thinking</span>
+                        <span class="tag">Problem Solving</span>
+                        <span class="tag">Communication</span>
+                        <span class="tag">Quick Learner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section id="project">
+        <div class="container">
+            <h2 class="section-title">Featured Project</h2>
+            <p class="section-subtitle">Hands-on experience with security tools</p>
+            <div class="project-card">
+                <h3 class="project-title">Phishing Email Detector</h3>
+                <p class="project-tech">Python | Regex | File Handling</p>
+                <p class="project-description">
+                    I developed a Python-based tool to help detect phishing emails by analyzing suspicious keywords, sender domains, and malicious links. This project helped me understand how cybersecurity tools work and gave me practical experience with Python programming and pattern matching.
+                </p>
+                <ul class="project-features">
+                    <li>Analyzes email content for suspicious keywords and patterns</li>
+                    <li>Uses Regular Expressions (Regex) to detect malicious URLs</li>
+                    <li>Checks sender domains for legitimacy</li>
+                    <li>Classifies emails as either Phishing or Legitimate</li>
+                    <li>Provides a foundation that can be improved with machine learning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Roles Section -->
+    <section>
+        <div class="container">
+            <div class="target-box">
+                <h3>Seeking Internship Opportunities</h3>
+                <p>I'm looking for internship positions where I can apply my skills and learn from industry professionals</p>
+                <div class="roles">
+                    <span class="role">Cybersecurity Analyst Intern</span>
+                    <span class="role">SOC Analyst Intern</span>
+                    <span class="role">Information Security Intern</span>
+                    <span class="role">Security Research Intern</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <p class="section-subtitle">Industry simulations and training programs (Click to view)</p>
+            <div class="cert-grid">
+                <a href="certificates/deloitte-cyber.jpg" target="_blank" class="cert-card cert-link">
+                    <h3 class="cert-title">Deloitte Australia Cyber Job Simulation</h3>
+                    <p class="cert-org">Forage • July 2025</p>
+                    <p class="cert-description">Completed simulation involving cyber security analysis, web log inspection, and identifying suspicious activities.</p>
+                    <div class="view-cert">View Certificate →</div>
+                </a>
+                <a href="certificates/mastercard-cyber.jpg" target="_blank" class="cert-card cert-link">
+                    <h3 class="cert-title">Mastercard Cybersecurity Virtual Experience</h3>
+                    <p class="cert-org">Forage • July 2025</p>
+                    <p class="cert-description">Focused on phishing threat identification and implementing security awareness training programs.</p>
+                    <div class="view-cert">View Certificate →</div>
+                </a>
+                <a href="certificates/aig-cyber.jpg" target="_blank" class="cert-card cert-link">
+                    <h3 class="cert-title">AIG Shields Up: Cybersecurity Program</h3>
+                    <p class="cert-org">Forage • July 2025</p>
+                    <p class="cert-description">Analyzed CISA-reported threats, drafted remediation guidance, and practiced ethical hacking with Python.</p>
+                    <div class="view-cert">View Certificate →</div>
+                </a>
+                <a href="certificates/bcg-genai.jpg" target="_blank" class="cert-card cert-link">
+                    <h3 class="cert-title">BCG GenAI Job Simulation</h3>
+                    <p class="cert-org">Forage • July 2025</p>
+                    <p class="cert-description">Developed an AI chatbot using Python and pandas for financial report analysis.</p>
+                    <div class="view-cert">View Certificate →</div>
+                </a>
+                <a href="certificates/deloitte-data.jpg" target="_blank" class="cert-card cert-link">
+                    <h3 class="cert-title">Deloitte Australia Data Analytics Simulation</h3>
+                    <p class="cert-org">Forage • August 2025</p>
+                    <p class="cert-description">Focused on data analysis, Excel-based classification, and Tableau dashboard creation.</p>
+                    <div class="view-cert">View Certificate →</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">I'm actively looking for internship opportunities</p>
+            <div class="contact-grid">
+                <div class="contact-card" onclick="window.location.href='mailto:madhuriprajapati2004@gmail.com'" style="cursor: pointer;">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">madhuriprajapati2004@gmail.com</div>
+                </div>
+                <a href="https://linkedin.com/in/madhuri-prajapati-837812294" target="_blank" class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-label">LinkedIn</div>
+                    <div class="contact-value">Connect with me</div>
+                </a>
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value">+91 7723899541</div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-label">Location</div>
+                    <div class="contact-value">Bhopal, Madhya Pradesh</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Madhuri Prajapati. All Rights Reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8;">Designed and developed with passion for cybersecurity.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script>
+        // Get all navigation links that start with #
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            // Add click event to each link
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); // Stop normal link behavior
+                
+                // Find the section to scroll to
+                const target = document.querySelector(this.getAttribute('href'));
+                
+                // If section exists, scroll smoothl
